@@ -176,8 +176,8 @@ int main(int argc, char *argv[]) {
         for (float i; i++ < 8.; o += (sin(v.xyyx()) + 1.) * abs(v.x - v.y) * .2)
           v += cos(v.yx() * i + vec2(0, i) + t) / i + .7;
         o = tanh(exp(p.y * vec4(1, -1, -2, 0)) * exp(-4. * l.x) / o);
-        oss << (uint8_t)o.x * MAX_VALUE << (uint8_t)o.y * MAX_VALUE
-            << (uint8_t)o.z * MAX_VALUE;
+        oss << (uint8_t)(o.x * MAX_VALUE) << (uint8_t)(o.y * MAX_VALUE)
+            << (uint8_t)(o.z * MAX_VALUE);
       }
     }
     output << oss.str();
