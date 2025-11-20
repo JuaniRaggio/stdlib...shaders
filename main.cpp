@@ -12,7 +12,7 @@
 
 int main(int argc, char *argv[]) {
 
-  for (int i{0}; i < FACTOR; ++i) {
+  for (uint8_t i{0}; i < FACTOR; ++i) {
 
     std::string file_path = std::format("frames/out{}.ppm", i);
 
@@ -27,8 +27,8 @@ int main(int argc, char *argv[]) {
     std::uint16_t height{9 * FACTOR};
     std::ostringstream oss;
     oss << "P6\n"
-        << std::format("%d %d\n", width, height)
-        << std::format("%d\n", MAX_VALUE);
+        << std::format("{} {}\n", width, height)
+        << std::format("{}\n", MAX_VALUE);
 
     for (uint64_t y{0}; y < height; ++y) {
       for (uint64_t x{0}; x < width; ++x) {
@@ -41,6 +41,7 @@ int main(int argc, char *argv[]) {
       }
     }
     output << oss.str();
+    oss.clear();
     output.close();
     std::cout << std::format("Generated {}\n", file_path);
   }
