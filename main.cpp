@@ -11,7 +11,7 @@
 #define MAX_VALUE 255
 
 typedef struct {
-  int x, y;
+  float x, y;
 } vec2;
 
 int main(int argc, char *argv[]) {
@@ -36,7 +36,11 @@ int main(int argc, char *argv[]) {
 
     for (uint64_t y{0}; y < height; ++y) {
       for (uint64_t x{0}; x < width; ++x) {
-        vec2 p=(FC.xy*2.-r)/r.y,l,v=p*(1.-(l+=abs(.7-dot(p,p))))/.2;for(float i;i++<8.;o+=(sin(v.xyyx)+1.)*abs(v.x-v.y)*.2)v+=cos(v.yx*i+vec2(0,i)+t)/i+.7;o=tanh(exp(p.y*vec4(1,-1,-2,0))*exp(-4.*l.x)/o);
+        vec2 FC = {
+          .x = (float) x,
+          .y = (float) y,
+        };
+        vec2 p=(FC*2.-r)/r.y,l,v=p*(1.-(l+=abs(.7-dot(p,p))))/.2;for(float i;i++<8.;o+=(sin(v.xyyx)+1.)*abs(v.x-v.y)*.2)v+=cos(v.yx*i+vec2(0,i)+t)/i+.7;o=tanh(exp(p.y*vec4(1,-1,-2,0))*exp(-4.*l.x)/o);
       }
     }
     output << oss.str();
