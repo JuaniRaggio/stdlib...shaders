@@ -1,3 +1,4 @@
+#include <cmath>
 #include <cstdint>
 #include <cstdlib>
 #include <format>
@@ -91,11 +92,49 @@ vec2 cos(const vec2 &a) {
   };
 }
 
-vec2 sin(const vec4 &a) {
+vec2 sin(const vec2 &a) {
   return {
       .x = cosf(a.x),
       .y = cosf(a.y),
   };
+}
+
+vec4 sin(const vec4 &a) {
+  return vec4(sinf(a.x), sinf(a.y), sinf(a.z), sinf(a.w));
+}
+vec4 exp(const vec4 &a) {
+  return vec4(expf(a.x), expf(a.y), expf(a.z), expf(a.w));
+}
+
+vec4 tanh(const vec4 &a) {
+  return vec4(tanhf(a.x), tanhf(a.y), tanhf(a.z), tanhf(a.w));
+}
+
+vec4 operator+(const vec4 &a, float s) {
+  return vec4(a.x + s, a.y + s, a.z + s, a.w + s);
+}
+
+vec4 operator*(const vec4 &a, float s) {
+  return vec4(a.x * s, a.y * s, a.z * s, a.w * s);
+}
+
+vec4 operator*(float s, const vec4 &a) { return a * s; }
+
+vec4 operator+(const vec4 &a, const vec4 &b) {
+  return vec4(a.x + b.x, a.y + b.y, a.z + b.z, a.w + b.w);
+}
+
+vec4 &operator+=(vec4 &a, const vec4 &b) {
+  a = a + b;
+  return a;
+}
+
+vec4 operator-(float s, const vec4 &a) {
+  return vec4(s - a.x, s - a.y, s - a.z, s - a.w);
+}
+
+vec4 operator/(const vec4 &a, const vec4 &b) {
+  return vec4(a.x / b.x, a.y / b.y, a.z / b.z, a.w / b.w);
 }
 
 int main(int argc, char *argv[]) {
