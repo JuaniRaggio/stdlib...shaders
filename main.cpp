@@ -45,6 +45,10 @@ vec2 operator-(const vec2 &a, const vec2 &b) {
   };
 }
 
+vec2 operator-(float s, const vec2 &a) {
+  return vec2(s - a.x, s - a.y);
+}
+
 vec2 operator+(const vec2 &a, const vec2 &b) {
   return {
       .x = a.x + b.x,
@@ -171,8 +175,8 @@ int main(int argc, char *argv[]) {
         };
         vec2 p = (FC * 2. - r) / r.y, l,
              v = p * (1. - (l += abs(.7 - dot(p, p)))) / .2;
-        for (float i; i++ < 8.; o += (sin(v.xyyx) + 1.) * abs(v.x - v.y) * .2)
-          v += cos(v.yx * i + vec2(0, i) + t) / i + .7;
+        for (float i; i++ < 8.; o += (sin(v.xyyx()) + 1.) * abs(v.x - v.y) * .2)
+          v += cos(v.yx() * i + vec2(0, i) + t) / i + .7;
         o = tanh(exp(p.y * vec4(1, -1, -2, 0)) * exp(-4. * l.x) / o);
         oss << o.x * MAX_VALUE << o.y * MAX_VALUE << o.z * MAX_VALUE;
       }
