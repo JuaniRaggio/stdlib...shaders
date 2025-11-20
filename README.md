@@ -1,10 +1,13 @@
 # stdlib...shaders
 
-This is really simple proyect based on a tsoding video on how to implement
-shaders using a `.ppm` file
+This is a single-file implementation of shaders using only the stdlib.
 
 ## Dependencies
 
 - ffmpeg
-- any cpp compiler
+- any cpp compiler for C++20 or above
+
+## Credits
+
+This project is based on a tsoding video, _Graphics API is irrelevant_
 
