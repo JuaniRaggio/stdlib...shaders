@@ -98,8 +98,8 @@ vec2 cos(const vec2 &a) {
 
 vec2 sin(const vec2 &a) {
   return {
-      .x = cosf(a.x),
-      .y = cosf(a.y),
+      .x = sinf(a.x),
+      .y = sinf(a.y),
   };
 }
 
