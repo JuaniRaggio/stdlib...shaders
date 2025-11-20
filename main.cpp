@@ -6,7 +6,6 @@
 #include <fstream>
 #include <ios>
 #include <iostream>
-#include <sstream>
 #include <string>
 
 #define UNABLE_TO_OPEN_FILE 1
@@ -155,8 +154,8 @@ int main(int argc, char *argv[]) {
       return UNABLE_TO_OPEN_FILE;
     }
 
-    const std::uint16_t width{32 * FACTOR};
-    const std::uint16_t height{18 * FACTOR};
+    const std::uint16_t width{24 * FACTOR};
+    const std::uint16_t height{15 * FACTOR};
     const vec2 r = {
         .x = (double)width,
         .y = (double)height,
