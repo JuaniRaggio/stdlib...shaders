@@ -9,5 +9,5 @@ This is a single-file implementation of shaders using only the stdlib. Shaders w
 
 ## Credits
 
-This project is based on a tsoding video, _Graphics API is irrelevant_
+This project is inspired by a tsoding video, _Graphics API is irrelevant_
 
