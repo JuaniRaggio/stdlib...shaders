@@ -11,16 +11,15 @@
 #define FACTOR 60
 #define MAX_VALUE 255
 
+typedef struct vec4 {
+  float x, y, z, w;
+} vec4;
+
 typedef struct vec2 {
   float x, y;
-  vec2 yx() const {
-    return vec2(y, x);
-  }
-  vec4 xyyx() const {
-    return vec4(x, y, y, x);
-  }
+  vec2 yx() const { return vec2(y, x); }
+  vec4 xyyx() const { return vec4(x, y, y, x); }
 } vec2;
-
 
 vec2 operator*(const vec2 &a, float s) {
   return {
@@ -98,7 +97,6 @@ vec2 sin(const vec4 &a) {
       .y = cosf(a.y),
   };
 }
-
 
 int main(int argc, char *argv[]) {
 
