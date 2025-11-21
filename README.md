@@ -13,7 +13,7 @@ This is a single-file implementation of shaders using only the stdlib. Shaders w
 
 1. Compile the source file with any C++ compiler
     ```sh
-    c++ -std=c++20 main.cpp
+    c++ -O3 -std=c++20 main.cpp
     # or
     ./build.sh
     ```

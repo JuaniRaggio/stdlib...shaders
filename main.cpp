@@ -1,4 +1,3 @@
-#include <climits>
 #include <cmath>
 #include <cstdint>
 #include <cstdlib>
@@ -10,6 +9,7 @@
 
 #define UNABLE_TO_OPEN_FILE 1
 #define FACTOR 60
+#define FRAMES 100
 #define MAX_VALUE 255
 
 typedef struct vec4 {
@@ -140,7 +140,7 @@ vec4 operator/(const vec4 &a, const vec4 &b) {
 }
 
 int main(int argc, char *argv[]) {
-  for (uint8_t i = 0; i < FACTOR; ++i) {
+  for (uint8_t i = 0; i < FRAMES; ++i) {
 
     std::string file_path = std::format("frames/out{:02d}.ppm", i);
 
