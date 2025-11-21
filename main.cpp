@@ -140,9 +140,6 @@ vec4 operator/(const vec4 &a, const vec4 &b) {
 }
 
 int main(int argc, char *argv[]) {
-
-  char buff[CHAR_MAX];
-
   for (uint8_t i = 0; i < FACTOR; ++i) {
 
     std::string file_path = std::format("frames/out{:02d}.ppm", i);
